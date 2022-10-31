@@ -1,0 +1,13 @@
+.movie_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    margin-top: 80px;
+    &_img{
+        width: 50vh;
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import "abstract/variables";
+@import "abstract/mixin";
+@import "page/list";
+@import "page/details";
+
+body{
+    font-family: 'Barlow', sans-serif;
+    color: $White;
+    background: $Very-dark-unsaturated-black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 2em;
+    height: 100vh;
+    padding: 1em 2em 0;
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+    &-thumb{
+        background: #888;
+        border-radius: 10px;
+        &:hover{
+            background: rgb(174, 174, 174);
+        }
+    }
+}
