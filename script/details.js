@@ -1,4 +1,8 @@
+const body = document.querySelector('body');
 const mainContent = document.querySelector('#content');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.close');
+const frame = document.querySelector('iframe');
 
 async function movieDetails(){
     try{
@@ -48,10 +52,19 @@ async function movieDetails(){
             download.href = movie.url;
             download.textContent = 'Click Here to download'
             download.classList.add('download');
+
             const trailer = document.createElement('a');
             trailer.textContent = 'Watch trailer'
-            trailer.href = `https://www.youtube.com/embed/${movie.yt_trailer_code}?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3`;
-        trailer.classList.add('trailer');
+            trailer.addEventListener('click', ()=>{
+                modal.style.display = 'block';
+                frame.src = `https://www.youtube.com/embed/${movie.yt_trailer_code}`;
+            })
+            close.onclick = function() {
+                modal.style.display = "none";
+            }
+            // trailer.href = `https://www.youtube.com/embed/${movie.yt_trailer_code}`;
+            // trailer.href = `https://www.youtube.com/embed/${movie.yt_trailer_code}?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3`;
+            trailer.classList.add('trailer');
 
 
             mainContent.appendChild(movieDetailsImage);
