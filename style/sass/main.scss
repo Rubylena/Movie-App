@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @import "abstract/variables";
 @import "abstract/mixin";
 @import "page/list";
@@ -15,9 +16,7 @@ body{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 2em;
     height: 100vh;
-    padding: 1em 2em 0;
 }
 
 ::-webkit-scrollbar{
