@@ -1,17 +1,33 @@
-header{
+.header{
     display: flex;
-    gap: 1em;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     background: $Very-dark-unsaturated-black-rgba;
-    padding: 1em 1em;
+    padding: 1em 1.5em;
     width: 100%;
-    div{
-        width: 50px;
-        img{
-            width: 100%;
-            border-radius: 5px;
+    a{
+        text-decoration: none;
+        color: $White;
+    }
+    .logo{
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        &_image{
+            width: 50px;
+            img{
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+    }
+    .search_input{
+        padding: 0.3em;
+        &:first-of-type{
+            outline: none;
         }
     }
 }
