@@ -1,5 +1,6 @@
 const main = document.querySelector('main');
 const search = document.querySelector('.search_input');
+const searchIcon = document.querySelector('.search_icon');
 
 const searchIt = async (movie) =>{
     try {
@@ -37,6 +38,8 @@ const searchIt = async (movie) =>{
                 textContainer.appendChild(h2);
                 textContainer.appendChild(h3);
             });
+        } else {
+            main.innerHTML = 'No such movie available, mbok fiak nam!!!';
         }
     } catch(err){
         console.log(err);
@@ -44,6 +47,13 @@ const searchIt = async (movie) =>{
 }
 searchIt();
 
+searchIcon.addEventListener('click', ()=>{
+    const searchWords = search.value;
+    if(searchWords !== ''){
+        main.innerHTML = '';
+        searchIt(`?query_term=${searchWords}&limit=50`);
+    } 
+});
 
 search.addEventListener('keyup', (e) => {
     const searchWords = search.value;

@@ -27,7 +27,6 @@ async function movieDetails(){
             content.style.gap = '0.5em';
             const h1 = document.createElement('h1');
             h1.textContent = movie.title;
-            h1.style.fontSize = '2em';
             const h2 = document.createElement('h2');
             h2.textContent = movie.year;
             const h3 = document.createElement('h3');
@@ -49,12 +48,13 @@ async function movieDetails(){
             } );
 
             const download = document.createElement('a');
-            download.href = movie.url;
+            download.href = movie.torrents[0].url;
             download.textContent = 'Click Here to download'
             download.classList.add('download');
 
             const trailer = document.createElement('a');
             trailer.textContent = 'Watch trailer'
+            trailer.classList.add('trailer');
             trailer.addEventListener('click', ()=>{
                 modal.style.display = 'block';
                 frame.src = `https://www.youtube.com/embed/${movie.yt_trailer_code}`;
@@ -62,9 +62,13 @@ async function movieDetails(){
             close.onclick = function() {
                 modal.style.display = "none";
             }
-            // trailer.href = `https://www.youtube.com/embed/${movie.yt_trailer_code}`;
-            // trailer.href = `https://www.youtube.com/embed/${movie.yt_trailer_code}?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3`;
-            trailer.classList.add('trailer');
+            // window.onclick = function(){
+            //     if(modal.style.display = "block"){
+            //         modal.style.display = "none";
+            //     } else {
+            //         modal.style.display = "block";
+            //     }
+            // }
 
 
             mainContent.appendChild(movieDetailsImage);

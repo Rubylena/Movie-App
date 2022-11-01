@@ -24,10 +24,30 @@
             }
         }
     }
+    .search{
+        display: flex;
+        position: relative;
+        &_icon{
+            position: absolute;
+            top: 3.5px;
+            right: 8px;
+            cursor: pointer;
+        }
+    }
     .search_input{
-        padding: 0.3em;
-        &:first-of-type{
+        padding: 0.4em 2em 0.4em 0.7em;
+        border-radius: 10px;
+        width: 100%;
+        &:focus{
             outline: none;
+        }
+    }
+    @media screen and (max-width: 769px) {
+        flex-direction: column;
+        gap: 0.6em;
+        justify-content: center;
+        h1{
+            font-size: 1.4em;
         }
     }
 }
@@ -37,7 +57,7 @@ main{
     flex-flow: row wrap;
     justify-content: center;
     gap: 3em;
-    margin-top: 100px;
+    margin-top: 9em;
     padding: 1em 2em 0;
     a{
         text-decoration: none;
