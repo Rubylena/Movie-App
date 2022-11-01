@@ -195,7 +195,8 @@ footer {
   height: 100%; }
 
 .close {
-  position: absolute; }
+  position: absolute;
+  font-size: 20px; }
 
 @media screen and (max-width: 769px) {
   .movie_details {
