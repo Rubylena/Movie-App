@@ -25,9 +25,7 @@ const searchIt = async (movie) =>{
                 img.src = movie.medium_cover_image;
                 textContainer.style.padding = '0 0.5em';
                 h2.innerHTML = movie.title;
-                h2.style.fontSize = '1em';
                 h3.innerHTML = movie.year;
-                h3.style.fontSize = '1em';
                 h3.style.color = 'rgba(255,255,255, 0.2)';
                 
                 main.appendChild(a);
